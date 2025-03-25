@@ -71,7 +71,6 @@ public class Menu {
         System.out.println("4._ "  + getOpcion4());
         System.out.println("5._ " + getOpcion5());
         System.out.println();
-
         System.out.print(Ansi.ANSI_BLUE + "Por Favor Digite Una  Opcion..." + Ansi.ANSI_RESET);
     }
 
