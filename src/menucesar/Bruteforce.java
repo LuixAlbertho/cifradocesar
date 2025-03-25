@@ -67,7 +67,7 @@ public class Bruteforce {
             }
 
             String sustra = res.substring(0,70);
-
+            System.out.println();
             System.out.println(desplaz +"- " +  Ansi.ANSI_GREEN +  sustra + Ansi.ANSI_RESET);
             //System.out.println(desplaz +"- " +  Ansi.ANSI_GREEN +  res + Ansi.ANSI_RESET);
 

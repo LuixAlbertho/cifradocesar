@@ -1,5 +1,8 @@
 package menucesar;
 
+/**
+ * cifrado cesar
+ */
 public class CesarCipher {
 
     private  String mensaje;

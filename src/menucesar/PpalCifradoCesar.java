@@ -5,7 +5,12 @@ import java.io.IOException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-
+/**
+ *
+ * @Author Luis Alberto Meneses
+ * Este es metodo principal
+ *
+ */
 
 
 public class PpalCifradoCesar {

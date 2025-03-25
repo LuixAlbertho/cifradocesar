@@ -47,7 +47,7 @@ public class FileManager {
 
                 Path path = Files.writeString(Path.of(ruta), "", StandardOpenOption.CREATE_NEW);
                 Path path1 = Files.writeString(Path.of(ruta), Messagefinal, StandardOpenOption.WRITE);
-
+                System.out.println();
                 System.out.println("Se ha Generado y Guardado Un Nuevo Documento Cifrado En: " +   path1.normalize().toAbsolutePath());
 
             }
