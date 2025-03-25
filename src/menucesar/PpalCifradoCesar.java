@@ -14,7 +14,7 @@ public class PpalCifradoCesar {
         Menu1.setTitulo("BIENVENIDO A LA IMPLEMENTACION - CIFRADO CESAR");
         Menu1.setOpcion1("CIFRAR EL TEXTO DE UN ARCHIVO");
         Menu1.setOpcion2("DECIFRAR EL TEXTO DE UN ARCHIVO");
-        Menu1.setOpcion3("CIFRAR UN ARCHIVO METODO FUERZA BRUTA");
+        Menu1.setOpcion3("DECIFRAR UN ARCHIVO METODO FUERZA BRUTA");
         Menu1.setOpcion4("VOLVER AL MENU");
         Menu1.setOpcion5("SALIR");
 
@@ -35,7 +35,7 @@ public class PpalCifradoCesar {
                 switch (opcionAtomar) {
                     case 1:
                         Scanner nombArch = new Scanner(System.in);
-                        System.out.print(Ansi.ANSI_BLUE +  "Ingresa La Ruta Con El Nombre Del Archivo  Que Deseas Cifrar: "+ Ansi.ANSI_RESET);
+                        System.out.print(Ansi.ANSI_BLUE +  "Ingresa La Ruta Del Archivo  Que Deseas Cifrar: "+ Ansi.ANSI_RESET);
                         String fileName = nombArch.nextLine();
                         File file = new File(fileName);
 
@@ -47,7 +47,18 @@ public class PpalCifradoCesar {
                             int  desplazar =   nombArch.nextInt();
                             String archivoCifrado = cifrar.cipher(FileManager.readFile((fileName)),desplazar);
                             System.out.println(Ansi.ANSI_GREEN +  "Tu Archivo Fue Cifrado Correctamente "+ Ansi.ANSI_RESET);
-                            FileManager.writeFile(archivoCifrado);
+                            System.out.print(Ansi.ANSI_BLUE+  "Digite << 1 >>: Si Desea  especificar La Ruta Donde Se Guardará El Archivo, De Lo contrario Digite << 2 >>..."+ Ansi.ANSI_RESET);
+                            int  opcLetra =   nombArch.nextInt();
+                            String ruta = "";
+                            if (opcLetra ==1){
+                                System.out.print(Ansi.ANSI_YELLOW +  "Digite La Ruta (Ej: D:\\Cifrado.txt), Donde Se Guardara El Alchivo:"+ Ansi.ANSI_RESET);
+                                nombArch.nextLine(); // limpiar el buffer
+                                ruta = nombArch.nextLine();
+                                FileManager.writeFile(archivoCifrado, ruta,1);
+                            } else if (opcLetra ==2) {
+                                ruta ="Cifrado.txt";
+                                FileManager.writeFile(archivoCifrado, ruta,1);
+                            }
 
                         } else {
                             System.out.println(Ansi.ANSI_RED + "Este archivo no existe!!. Por favor vuelva a intentarlo." + Ansi.ANSI_RESET);
@@ -56,7 +67,7 @@ public class PpalCifradoCesar {
                         break;
                     case 2:
                         Scanner nombArch1 = new Scanner(System.in);
-                        System.out.print(Ansi.ANSI_BLUE +  "Ingresa la Rota Con El Nombre Del Archivo  Que Deseas Decifrar: "+ Ansi.ANSI_RESET);
+                        System.out.print(Ansi.ANSI_BLUE +  "Ingresa la Ruta  Del Archivo  Que Deseas Decifrar: "+ Ansi.ANSI_RESET);
                         String fileName1 = nombArch1.nextLine();
                         File file1 = new File(fileName1);
 
@@ -68,7 +79,8 @@ public class PpalCifradoCesar {
                             int  desplazar =   nombArch1.nextInt();
 
                             String archivoDecifrado2 = cifrar.decipher(FileManager.readFile((fileName1)),desplazar);
-                            FileManager.writeFile(archivoDecifrado2);
+
+                            FileManager.writeFile(archivoDecifrado2,fileName1,2);
                         } else {
                             System.out.println(Ansi.ANSI_RED + "Este archivo no existe!!. Por favor vuelva a intentarlo." + Ansi.ANSI_RESET);
                         }
@@ -77,7 +89,7 @@ public class PpalCifradoCesar {
 
                     case 3:
                         Scanner nombArch2 = new Scanner(System.in);
-                        System.out.print(Ansi.ANSI_BLUE +  "Ingresa La Ruta Con El Nombre Del Archivo  Que Deseas Decifrar: "+ Ansi.ANSI_RESET);
+                        System.out.print(Ansi.ANSI_BLUE +  "Ingresa La Ruta  Del Archivo  Que Deseas Decifrar: "+ Ansi.ANSI_RESET);
                         String fileName2 = nombArch2.nextLine();
                         File file2 = new File(fileName2);
 
@@ -88,18 +100,18 @@ public class PpalCifradoCesar {
                             bruteforce.decipherSerch(FileManager.readFile((fileName2)));
                             System.out.println(Ansi.ANSI_BLUE+ "Elija La llave para Guardar El  Archivo " + Ansi.ANSI_RESET);
 
+
                             int  desplazar =   nombArch2.nextInt();
 
                             String archivoDecifrado3 = cifrar.decipher(FileManager.readFile((fileName2)),desplazar);
 
-                            FileManager.writeFile(archivoDecifrado3);
+                            FileManager.writeFile(archivoDecifrado3,fileName2,3 );
 
                         } else {
                             System.out.println(Ansi.ANSI_RED + "Este archivo no existe!!. Por favor vuelva a intentarlo." + Ansi.ANSI_RESET);
                         }
                         break;
                     case 4:
-                        //imprimirMenu();
                         Menu1.imprimirmnu();
                         break;
                     case 5:
@@ -115,7 +127,7 @@ public class PpalCifradoCesar {
 
 
             } catch (InputMismatchException e) {
-                System.out.println(Ansi.ANSI_RED +"Opcion Invalidad, Elija una Opcion  valida( 1,2,3,4,5) del  Menu" + Ansi.ANSI_RESET);
+                System.out.println(Ansi.ANSI_RED +"Opcion Invalidad, Elija una Opcion  valida( 1,2,3,4,5) Para Volvr Al  Menu" + Ansi.ANSI_RESET);
                 //opcionAtomar = Integer.parseInt(ingresopcion.next());
                 ingresopcion.next();
             }catch (IOException e) {
