@@ -7,7 +7,12 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 
-
+/**
+ *
+ *
+ * Este es La clase FileManager
+ *
+ */
 public class FileManager {
 
     public static String readFile(String nombArch) throws IOException {
@@ -24,6 +29,15 @@ public class FileManager {
         return mensaje;
     }
 
+    /**
+     *
+     *La clase FileManager: Permite las operaciones apropiadas de lectura y escritura de archivos
+     * y que los resultados se escriben en un archivo y se guardan en la ruta donde el usuario disponga
+     *
+     * @param Messagefinal = mensaje que se v a guardar
+     * @param ruta = ruta donde se guardara el mensaje
+     * @param opc = permite escoger si el archivo se guarda o se remplaza
+     */
     public static void writeFile(String Messagefinal,String ruta, int opc) {
 
         try {

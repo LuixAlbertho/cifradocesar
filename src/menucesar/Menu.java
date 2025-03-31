@@ -1,5 +1,10 @@
 package menucesar;
-
+/**
+ *
+ *
+ * Este es La clase Menu, Genera un menú de opciones
+ *
+ */
 public class Menu {
     //atributos
     String titulo;

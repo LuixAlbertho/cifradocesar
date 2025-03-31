@@ -8,7 +8,9 @@ import java.util.Scanner;
 /**
  *
  * @Author Luis Alberto Meneses
- * Este es metodo principal
+ *
+ * Este es La clase principal
+ * PpalCifradoCesar: Es la clase principal donde comienza la ejecución y el control del flujo del programa.
  *
  */
 
@@ -18,15 +20,17 @@ public class PpalCifradoCesar {
         Menu Menu1 = new Menu();
         Menu1.setTitulo("BIENVENIDO A LA IMPLEMENTACION - CIFRADO CESAR");
         Menu1.setOpcion1("CIFRAR EL TEXTO DE UN ARCHIVO");
-        Menu1.setOpcion2("DECIFRAR EL TEXTO DE UN ARCHIVO");
-        Menu1.setOpcion3("DECIFRAR UN ARCHIVO METODO FUERZA BRUTA");
+        Menu1.setOpcion2("DESCIFRAR EL TEXTO DE UN ARCHIVO");
+        Menu1.setOpcion3("DESCIFRAR UN ARCHIVO METODO FUERZA BRUTA");
         Menu1.setOpcion4("VOLVER AL MENU");
         Menu1.setOpcion5("SALIR");
 
 
         Menu1.imprimirmnu();
 
+
         Scanner ingresopcion = null;
+
         int opcionAtomar = 0;
         ingresopcion = new Scanner(System.in);
 

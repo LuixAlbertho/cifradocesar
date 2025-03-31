@@ -1,7 +1,10 @@
 package menucesar;
 
 /**
- * cifrado cesar
+ *
+ *
+ *La clase CesarCipher: Permite el cifrado y el descifrado de Archivos usanndo cifrado  cesar
+ *
  */
 public class CesarCipher {
 
@@ -75,17 +78,15 @@ public class CesarCipher {
         for(int pos = 0; pos < mensaje.length(); pos++){
             char actual = mensaje.charAt(pos);
             if (toperCases(actual)){
-                // debe saber que el caracter actual que posicion ocupa dntro del alfabeto
-                //indexOf recibe como parametro un String para convertirlo em estring uso ""
                 int posActual =  ALPHMAY.indexOf(actual + "");
-                //posActual = posActual - desplaz;
-
                 if (posActual - desplaz < 0) {
                     posActual = 27 + (posActual - desplaz);
                 }else {
                     posActual = (posActual - desplaz)%27;
                 }
-
+                if (posActual < 0 ){
+                    posActual =  27 + (posActual);
+                }
                 actual = ALPHMAY.charAt(posActual);
             } else if (lowerCases(actual)){
                 int posActual =  ALPHMIN.indexOf(actual + "");
@@ -93,6 +94,9 @@ public class CesarCipher {
                     posActual = 27 + (posActual - desplaz);
                 }else {
                     posActual = (posActual - desplaz)%27;
+                }
+                if (posActual < 0 ){
+                    posActual =  27 + (posActual);
                 }
                 actual = ALPHMIN.charAt(posActual);
             }else {

@@ -1,5 +1,10 @@
 package menucesar;
-
+/**
+ *
+ * La clase Bruteforce: Descifrado de archivos. Haciendo búsquedas en todas las opciones
+ * disponibles (27 llaves que son las posicions del alfabeto definido)
+ *
+ */
 public class Bruteforce {
     private  String mensaje;
     private int  llave;
